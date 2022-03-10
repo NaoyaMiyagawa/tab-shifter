@@ -1,8 +1,8 @@
 {
-  "name": "vitesse-webext",
-  "displayName": "Vitesse WebExt",
+  "name": "tab-shifter",
+  "displayName": "Tab Shifter",
   "version": "0.0.1",
-  "description": "[description]",
+  "description": "Web Extension just to move your active tab to left/right with shortcut key.",
   "private": true,
   "scripts": {
     "dev": "npm run clear && cross-env NODE_ENV=development run-p dev:*",

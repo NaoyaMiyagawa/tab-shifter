@@ -13,6 +13,8 @@ type Command = {
   }
 }
 
+// @NOTE: Not allowed to use [ or ] for extention shortcut. (sadly)
+
 const executeBrowserActionKey: string = '_execute_browser_action'
 export const executeBrowserAction: Command = {
   [executeBrowserActionKey]: {
@@ -29,7 +31,6 @@ export const moveTabToLeft: Command = {
   [moveTabToLeftKey]: {
     suggested_key: {
       //   default: 'Ctrl+[',
-      // TODO: switch to [
       mac: 'Command+MacCtrl+J',
     },
     description: 'moveTabToLeft',
@@ -42,7 +43,6 @@ export const moveTabToRight: Command = {
     suggested_key: {
       // TODO: set default
       //   default: 'Alt+]',
-      // TODO: switch to ]
       mac: 'Command+MacCtrl+K',
     },
     description: 'moveTabToRight',

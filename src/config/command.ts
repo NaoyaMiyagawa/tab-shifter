@@ -10,6 +10,7 @@ type Command = {
   [commandName: string]: {
     suggested_key: ShortcutKeyByEnv
     description?: string
+    global?: boolean
   }
 }
 
@@ -30,7 +31,7 @@ export const moveTabToLeftKey: string = 'tab_to_left'
 export const moveTabToLeft: Command = {
   [moveTabToLeftKey]: {
     suggested_key: {
-      //   default: 'Ctrl+[',
+      // TODO: set default
       mac: 'Command+MacCtrl+J',
     },
     description: 'moveTabToLeft',
@@ -42,15 +43,38 @@ export const moveTabToRight: Command = {
   [moveTabToRightKey]: {
     suggested_key: {
       // TODO: set default
-      //   default: 'Alt+]',
       mac: 'Command+MacCtrl+K',
     },
     description: 'moveTabToRight',
   },
 }
 
+export const moveTabToLeftEndKey: string = 'tab_to_left_end'
+export const moveTabToLeftEnd: Command = {
+  [moveTabToLeftEndKey]: {
+    suggested_key: {
+      // TODO: set default
+      mac: 'Command+MacCtrl+H',
+    },
+    description: 'moveTabToLeftEnd',
+  },
+}
+
+export const moveTabToRightEndKey: string = 'tab_to_right_end'
+export const moveTabToRightEnd: Command = {
+  [moveTabToRightEndKey]: {
+    suggested_key: {
+      // TODO: set default
+      mac: 'Command+MacCtrl+L',
+    },
+    description: 'moveTabToRightEnd',
+  },
+}
+
 export const commandList = {
-  ...executeBrowserAction,
+  // ...executeBrowserAction,
   ...moveTabToLeft,
   ...moveTabToRight,
+  ...moveTabToLeftEnd,
+  ...moveTabToRightEnd,
 }

@@ -9,6 +9,8 @@ export const useTabShifter = () => {
   const tabIndexes = computed(() => ({
     left: Number(currentTab.value?.index) - 1,
     right: Number(currentTab.value?.index) + 1,
+    leftEnd: 0,
+    rightEnd: 100,
   }))
 
   /** Shift active tab to right */
@@ -21,6 +23,18 @@ export const useTabShifter = () => {
   const shiftTabToLeft = async () => {
     await updateCurrentTab()
     shiftTab(tabIndexes.value.left)
+  }
+
+  /** Shift active tab to right */
+  const shiftTabToRightEnd = async () => {
+    await updateCurrentTab()
+    shiftTab(tabIndexes.value.rightEnd)
+  }
+
+  /** Shift active tab to left */
+  const shiftTabToLeftEnd = async () => {
+    await updateCurrentTab()
+    shiftTab(tabIndexes.value.leftEnd)
   }
 
   /** Shift tab to specified index */
@@ -44,5 +58,5 @@ export const useTabShifter = () => {
     ;[currentTab.value] = await browser.tabs.query({ active: true })
   }
 
-  return { shiftTabToLeft, shiftTabToRight }
+  return { shiftTabToLeft, shiftTabToRight, shiftTabToRightEnd, shiftTabToLeftEnd }
 }

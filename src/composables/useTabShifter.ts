@@ -55,7 +55,7 @@ export const useTabShifter = () => {
 
   /** Update current tab info */
   const updateCurrentTab = async () => {
-    ;[currentTab.value] = await browser.tabs.query({ active: true })
+    ;[currentTab.value] = await browser.tabs.query({ active: true, currentWindow: true })
   }
 
   return { shiftTabToLeft, shiftTabToRight, shiftTabToRightEnd, shiftTabToLeftEnd }

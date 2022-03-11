@@ -21,12 +21,15 @@ export const executeBrowserAction: Command = {
   [executeBrowserActionKey]: {
     suggested_key: {
       //   default: 'Ctrl+K',
-      mac: 'Command+MacCtrl+P',
+      mac: 'Command+MacCtrl+J',
     },
     description: 'executeBrowserAction',
   },
 }
 
+/**
+ * Single move
+ */
 export const moveTabToLeftKey: string = 'tab_to_left'
 export const moveTabToLeft: Command = {
   [moveTabToLeftKey]: {
@@ -48,6 +51,10 @@ export const moveTabToRight: Command = {
     description: 'moveTabToRight',
   },
 }
+
+/**
+ * Edge move
+ */
 
 export const moveTabToLeftEndKey: string = 'tab_to_left_end'
 export const moveTabToLeftEnd: Command = {

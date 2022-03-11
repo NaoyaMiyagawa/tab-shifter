@@ -1,23 +1,46 @@
+<script setup lang="ts">
+import { commandDisplays } from '~/config/command'
+</script>
+
 <template>
-  <main class="w-[300px] px-4 py-5 text-center text-gray-700">
-    <Logo />
-    <div>Popup</div>
-    <p class="mt-2 opacity-50">
-      This is the popup page
-    </p>
-    <button class="btn mt-2" @click="openOptionsPage">
-      Open Options
-    </button>
-    <div class="mt-2">
-      <span class="opacity-50">Storage:</span> {{ storageDemo }}
+  <main class="w-[300px] px-4 py-4 text-center text-gray-700">
+    <div class="flex justify-between items-center">
+      <div class="flex justify-center">
+        <Logo />
+        <div class="text-green-300 font-bold m-auto">Tab Shifter</div>
+      </div>
+
+      <div>
+        <IconGithub />
+      </div>
+    </div>
+
+    <div class="border border-gray-200 rounded-lg my-3 px-2 py-4">
+      <p class="text-gray-400 py-1">Shortcut Keys</p>
+      <hr class="m-auto w-[80%]" />
+
+      <table class="bl_shortcutKeysTable">
+        <template v-for="(value, key) in commandDisplays" :key="key">
+          <tr>
+            <th>{{ value }}</th>
+            <td>{{ key }}</td>
+          </tr>
+        </template>
+      </table>
     </div>
   </main>
 </template>
 
-<script setup lang="ts">
-import { storageDemo } from '~/logic/storage'
+<style lang="scss">
+.bl_shortcutKeysTable {
+  @apply m-auto my-4 text-gray-400;
 
-function openOptionsPage() {
-  browser.runtime.openOptionsPage()
+  th,
+  td {
+    @apply border p-1;
+  }
+  th {
+    @apply font-normal text-size-[90%] text-left;
+  }
 }
-</script>
+</style>

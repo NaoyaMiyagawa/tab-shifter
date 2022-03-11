@@ -7,10 +7,10 @@ export const useTabShifter = () => {
   const currentTab = ref<Tabs.Tab | null>(null)
 
   const tabIndexes = computed(() => ({
-    left: Number(currentTab.value?.index) - 1,
+    left: Math.max(0, Number(currentTab.value?.index) - 1),
     right: Number(currentTab.value?.index) + 1,
     leftEnd: 0,
-    rightEnd: 100,
+    rightEnd: -1,
   }))
 
   /** Shift active tab to right */
@@ -39,8 +39,8 @@ export const useTabShifter = () => {
 
   /** Shift tab to specified index */
   const shiftTab = async (indexTo: number) => {
-    const tabId = currentTab.value?.id || -1
-    if (tabId === -1) {
+    const tabId = currentTab.value?.id
+    if (tabId === undefined) {
       return
     }
 

@@ -87,8 +87,8 @@ export const commandList = {
 }
 
 export const commandDisplays = {
-  'Cmd + Ctrl + H': 'タブを左端に移動する',
-  'Cmd + Ctrl + J': 'タブを左に移動する',
-  'Cmd + Ctrl + K': 'タブを右に移動する',
-  'Cmd + Ctrl + L': 'タブを右端に移動する',
+  'Cmd + Ctrl + H': 'Shift to Left-End',
+  'Cmd + Ctrl + J': 'Shift to Left',
+  'Cmd + Ctrl + K': 'Shift to Right',
+  'Cmd + Ctrl + L': 'Shift to Right-End',
 }

@@ -33,13 +33,13 @@ export async function getManifest() {
       128: './assets/icon-512.png',
     },
     permissions: ['tabs', 'storage', 'activeTab', 'http://*/', 'https://*/'],
-    content_scripts: [
-      {
-        matches: ['http://*/*', 'https://*/*'],
-        js: ['./dist/contentScripts/index.global.js'],
-      },
-    ],
-    web_accessible_resources: ['dist/contentScripts/style.css'],
+    // content_scripts: [
+    //   {
+    //     matches: ['http://*/*', 'https://*/*'],
+    //     js: ['./dist/contentScripts/index.global.js'],
+    //   },
+    // ],
+    // web_accessible_resources: ['dist/contentScripts/style.css'],
     // declared in config
     commands: commandList,
   }
